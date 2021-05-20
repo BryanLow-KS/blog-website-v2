@@ -29,7 +29,7 @@ const Post = mongoose.model("Post", postSchema);
 
 app.get("/", function(req, res){
 
-  Post.find({}, function(err, posts){
+  Post.find({}, function(err, posts){ //posts is the array that got returned from find function
     if (err)
     console.log(err);
     else {
@@ -74,7 +74,7 @@ app.post("/compose", function(req, res){
 
 });
 
-app.get("/posts/:postId", function(req, res){
+app.get("/posts/:postId", function(req, res){ //when we click the read more
   // const requestedTitle = _.lowerCase(req.params.postName);
   const requestedPostId = req.params.postId;
 
